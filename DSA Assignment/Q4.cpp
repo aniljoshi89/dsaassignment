@@ -1,9 +1,6 @@
-
 #include<iostream>
 #include <cmath>
 using namespace std;
-
-/* Linked list node */
 class Node {
   public:
 	int data;
