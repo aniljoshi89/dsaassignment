@@ -2,9 +2,6 @@
 #include<queue>
 #include<stack>
 using namespace std;
-
-/* Function to reverse the first
-K elements of the Queue */
 void reverseQueueFirstKElements(int k, queue<int>& Queue)
 {
 	if (Queue.empty() == true || k > Queue.size())
@@ -13,30 +10,20 @@ void reverseQueueFirstKElements(int k, queue<int>& Queue)
 		return;
 
 	stack<int> Stack;
-
-	/* Push the first K elements
-	into a Stack*/
 	for (int i = 0; i < k; i++) {
 		Stack.push(Queue.front());
 		Queue.pop();
 	}
 
-	/* Enqueue the contents of stack
-	at the back of the queue*/
 	while (!Stack.empty()) {
 		Queue.push(Stack.top());
 		Stack.pop();
 	}
-
-	/* Remove the remaining elements and
-	enqueue them at the end of the Queue*/
 	for (int i = 0; i < Queue.size() - k; i++) {
 		Queue.push(Queue.front());
 		Queue.pop();
 	}
 }
-
-/* Utility Function to print the Queue */
 void Print(queue<int>& Queue)
 {
 	while (!Queue.empty()) {
