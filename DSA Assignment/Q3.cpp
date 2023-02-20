@@ -33,8 +33,6 @@ Node* newNode(int data)
     }
     
     void reorderList(Node* head) {
-        
-        //step 1 - using slow and fast pointer approach to find the mid of the list
         Node* slow=head;
         Node* fast=head->next;
         
@@ -43,14 +41,9 @@ Node* newNode(int data)
             slow=slow->next;
             fast=fast->next->next;
         }
-        
-        //step 2 - reverse the second half and split the List into two.
-        Node* second=reverse(slow->next); // independent list second
+        Node* second=reverse(slow->next); 
         slow->next=NULL;
-        Node* first=head; // independent list first
-        
-        //step 3 - merging the two list
-        // second list can be shorter when LL size is odd
+        Node* first=head; 
         while(second != NULL)
         {
             Node* temp1=first->next;
