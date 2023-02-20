@@ -1,16 +1,11 @@
-// C++ program to find modular node in a linked list
 #include <bits/stdc++.h>
 #include<iostream>
 using namespace std;
-
-/* Linked list node */
 class Node {
   public:
 	int data;
 	Node* next;
 };
-
-/* Function to create a new node with given data */
 Node* newNode(int data)
 {
 	Node* new_node = new Node;
@@ -19,14 +14,11 @@ Node* newNode(int data)
 	return new_node;
 }
 
-/* Function to find modular node in the linked list */
 Node* modularNode(Node* head, int k)
 {
-	// Corner cases
 	if (k <= 0 || head == NULL)
 		return NULL;
 
-	// Traverse the given list
 	int i = 1;
 	Node* modularNode = NULL;
 	for (Node* temp = head; temp != NULL; temp = temp->next) {
